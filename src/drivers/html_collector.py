@@ -5,7 +5,8 @@ from .interfaces.html_collector import HtmlCollectorInterface
 
 class HtmlCollector(HtmlCollectorInterface):
 
-    def collect_essential_information(self, html: str) -> List[Dict[str, str]]:
+    @classmethod
+    def collect_essential_information(cls, html: str) -> List[Dict[str, str]]:
         soup = BeautifulSoup(html, 'html.parser')
         essential_information = []
 
